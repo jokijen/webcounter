@@ -20,6 +20,7 @@ def reset():
 
 @app.route("/set-value", methods=["POST"])
 def set_value():
-    amount = request.form["arvo"]
+    cnt.reset()
+    amount = request.form["value"]
     cnt.increment(int(amount))
     return redirect("/")
